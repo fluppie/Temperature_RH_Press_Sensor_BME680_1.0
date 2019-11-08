@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KonnektingDevice xmlns="http://konnekting.de/xml/KonnektingDevice/v0">
+    <Device ManufacturerId="7070" DeviceId="2" Revision="1">
+        <ManufacturerName>KONNEKTING MI</ManufacturerName>
+        <DeviceName>Temp RH Press Gas sensor</DeviceName>
+        <Parameters>
+            <ParameterGroup Name="Allgemein" Id="0">
+                <Parameter Id="0" IdName="initialDelay">
+                    <Description>Geräteanlaufzeit [0..65535ms]</Description>
+                    <Value Type="uint16" Default="03E8" Options="" Min="0000" Max="FFFF"/>
+                </Parameter>
+            </ParameterGroup>
+            <ParameterGroup Name="Temperatur" Id="1">
+                <Parameter Id="1" IdName="tempSendUpdate">
+                    <Description>Aktualisierung senden</Description>
+                    <Value Type="uint8" Default="01" Options="00=zyklisch|01=nur bei Änderung"/>
+                </Parameter>
+                <Parameter Id="2" IdName="tempPollingTime">
+                    <Description>Zyklus [s]</Description>
+                    <Value Type="uint32" Default="0000001E" Options="" Min="00000000" Max="000FFFFF"/>
+                </Parameter>
+                <Parameter Id="3" IdName="tempDiff">
+                    <Description>Temperaturänderung</Description>
+                    <Value Type="uint8" Default="02" Options="01=0,1°|02=0,2°|03=0,3°|04=0,4°|05=0,5°|06=0,6°|07=0,7°|08=0,8°|09=0,1°|10=1°|15=1,5°|20=2°"/>
+                </Parameter>
+                <Parameter Id="4" IdName="tempMinValue">
+                    <Description>Wert senden bei der Unterschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="5" IdName="tempMinLimit">
+                    <Description>Untere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+                <Parameter Id="6" IdName="tempMaxValue">
+                    <Description>Wert senden bei der Überschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="7" IdName="tempMaxLimit">
+                    <Description>Obere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+            </ParameterGroup>
+            <ParameterGroup Name="Relative Luftfeuchtigkeit" Id="2">
+                <Parameter Id="8" IdName="rhSendUpdate">
+                    <Description>Aktualisierung senden</Description>
+                    <Value Type="uint8" Default="01" Options="00=zyklisch|01=nur bei Änderung"/>
+                </Parameter>
+                <Parameter Id="9" IdName="rhPollingTime">
+                    <Description>Zyklus [s]</Description>
+                    <Value Type="uint32" Default="0000001E" Options="" Min="00000000" Max="000FFFFF"/>
+                </Parameter>
+                <Parameter Id="10" IdName="rhDiff">
+                    <Description>Luftfeuchtigkeitsänderung</Description>
+                    <Value Type="uint8" Default="10" Options="05=0,5%|10=1%|15=1,5%|20=2%|25=2,5%|30=3%|35=3,5%|40=4%"/>
+                </Parameter>
+                <Parameter Id="11" IdName="rhMinValue">
+                    <Description>Wert senden bei der Unterschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="12" IdName="rhMinLimit">
+                    <Description>Untere Grenze [%]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+                <Parameter Id="13" IdName="rhMaxValue">
+                    <Description>Wert senden bei der Überschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="14" IdName="rhMaxLimit">
+                    <Description>Obere Grenze [%]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+            </ParameterGroup>
+            <ParameterGroup Name="Luchtdruk" Id="3">
+                <Parameter Id="15" IdName="pressSendUpdate">
+                    <Description>Aktualisierung senden</Description>
+                    <Value Type="uint8" Default="01" Options="00=zyklisch|01=nur bei Änderung"/>
+                </Parameter>
+                <Parameter Id="16" IdName="pressPollingTime">
+                    <Description>Zyklus [s]</Description>
+                    <Value Type="uint32" Default="0000001E" Options="" Min="00000000" Max="000FFFFF"/>
+                </Parameter>
+                <Parameter Id="17" IdName="pressDiff">
+                    <Description>Drukverandering</Description>
+                    <Value Type="uint8" Default="02" Options="01=0,1°|02=0,2°|03=0,3°|04=0,4°|05=0,5°|06=0,6°|07=0,7°|08=0,8°|09=0,1°|10=1°|15=1,5°|20=2°"/>
+                </Parameter>
+                <Parameter Id="18" IdName="pressMinValue">
+                    <Description>Wert senden bei der Unterschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="19" IdName="pressMinLimit">
+                    <Description>Untere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+                <Parameter Id="20" IdName="pressMaxValue">
+                    <Description>Wert senden bei der Überschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="21" IdName="pressMaxLimit">
+                    <Description>Obere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+            </ParameterGroup>
+            <ParameterGroup Name="VOC / Gas Resistance" Id="4">
+                <Parameter Id="22" IdName="gasSendUpdate">
+                    <Description>Aktualisierung senden</Description>
+                    <Value Type="uint8" Default="01" Options="00=zyklisch|01=nur bei Änderung"/>
+                </Parameter>
+                <Parameter Id="23" IdName="gasPollingTime">
+                    <Description>Zyklus [s]</Description>
+                    <Value Type="uint32" Default="0000001E" Options="" Min="00000000" Max="000FFFFF"/>
+                </Parameter>
+                <Parameter Id="24" IdName="gasDiff">
+                    <Description>VOC verandering</Description>
+                    <Value Type="uint8" Default="02" Options="01=0,1°|02=0,2°|03=0,3°|04=0,4°|05=0,5°|06=0,6°|07=0,7°|08=0,8°|09=0,1°|10=1°|15=1,5°|20=2°"/>
+                </Parameter>
+                <Parameter Id="25" IdName="gasMinValue">
+                    <Description>Wert senden bei der Unterschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="26" IdName="gasMinLimit">
+                    <Description>Untere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+                <Parameter Id="27" IdName="gasMaxValue">
+                    <Description>Wert senden bei der Überschreitung</Description>
+                    <Value Type="uint8" Default="FF" Options="01=ein|00=aus|FF=nicht verwenden"/>
+                </Parameter>
+                <Parameter Id="28" IdName="gasMaxLimit">
+                    <Description>Obere Grenze [°]</Description>
+                    <Value Type="int16" Default="0000" Options="" Min="0000" Max="7FFF"/>
+                </Parameter>
+            </ParameterGroup>
+        </Parameters>
+        <CommObjects>
+            <CommObject Id="0" IdName="tempValue">
+                <Name>Temperatur</Name>
+                <Function>Messwert</Function>
+                <DataPointType>9.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="1" IdName="tempMin">
+                <Name>Temperatur</Name>
+                <Function>Untere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="2" IdName="tempMax">
+                <Name>Temperatur</Name>
+                <Function>Obere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="3" IdName="rhValue">
+                <Name>Relative Luftfeuchtigkeit</Name>
+                <Function>Messwert</Function>
+                <DataPointType>9.007</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="4" IdName="rhMin">
+                <Name>Relative Luftfeuchtigkeit</Name>
+                <Function>Untere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="5" IdName="rhMax">
+                <Name>Relative Luftfeuchtigkeit</Name>
+                <Function>Obere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="6" IdName="pressValue">
+                <Name>Luchtdruk</Name>
+                <Function>Messwert</Function>
+                <DataPointType>9.006</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="7" IdName="pressMin">
+                <Name>Luchtdruk</Name>
+                <Function>Untere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="8" IdName="pressMax">
+                <Name>Luchtdruk</Name>
+                <Function>Obere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="9" IdName="gasValue">
+                <Name>VOC / Gas Resistance</Name>
+                <Function>Messwert</Function>
+                <DataPointType>9.008</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="10" IdName="gasMin">
+                <Name>VOC / Gas Resistance</Name>
+                <Function>Untere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="11" IdName="gasMax">
+                <Name>VOC / Gas Resistance</Name>
+                <Function>Obere Grenze erreicht</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+        </CommObjects>
+        <Dependencies>
+            <ParameterDependency ParamId="5" TestParamId="4" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="7" TestParamId="6" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="12" TestParamId="11" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="14" TestParamId="13" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="19" TestParamId="18" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="21" TestParamId="20" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="26" TestParamId="25" Test="ne" TestValue="FF"/>
+            <ParameterDependency ParamId="28" TestParamId="27" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="1" TestParamId="4" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="2" TestParamId="6" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="4" TestParamId="11" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="5" TestParamId="13" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="7" TestParamId="18" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="8" TestParamId="20" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="10" TestParamId="25" Test="ne" TestValue="FF"/>
+            <CommObjectDependency CommObjId="11" TestParamId="27" Test="ne" TestValue="FF"/>
+        </Dependencies>
+    </Device>
+    <Configuration ManufacturerId="7070" DeviceId="2" Revision="1">
+        <IndividualAddress Address="1.1.107" Description="KONNEKTING BME680"/>
+        <CommObjectConfigurations>
+            <CommObjectConfiguration Id="0" GroupAddress="1/5/2" active="true"/>
+            <CommObjectConfiguration Id="1" active="false"/>
+            <CommObjectConfiguration Id="2" active="false"/>
+            <CommObjectConfiguration Id="3" GroupAddress="1/5/3" active="true"/>
+            <CommObjectConfiguration Id="4" active="false"/>
+            <CommObjectConfiguration Id="5" active="false"/>
+            <CommObjectConfiguration Id="6" GroupAddress="1/5/4" active="true"/>
+            <CommObjectConfiguration Id="7" active="false"/>
+            <CommObjectConfiguration Id="8" active="false"/>
+            <CommObjectConfiguration Id="9" GroupAddress="1/5/5" active="true"/>
+            <CommObjectConfiguration Id="10" active="false"/>
+            <CommObjectConfiguration Id="11" active="false"/>
+        </CommObjectConfigurations>
+        <ParameterConfigurations>
+            <ParameterConfiguration Id="0" Value="03E8"/>
+            <ParameterConfiguration Id="1" Value="01"/>
+            <ParameterConfiguration Id="2" Value="0000001E"/>
+            <ParameterConfiguration Id="3" Value="02"/>
+            <ParameterConfiguration Id="4" Value="FF"/>
+            <ParameterConfiguration Id="5" Value="0000"/>
+            <ParameterConfiguration Id="6" Value="FF"/>
+            <ParameterConfiguration Id="7" Value="0000"/>
+            <ParameterConfiguration Id="8" Value="01"/>
+            <ParameterConfiguration Id="9" Value="0000001E"/>
+            <ParameterConfiguration Id="10" Value="05"/>
+            <ParameterConfiguration Id="11" Value="FF"/>
+            <ParameterConfiguration Id="12" Value="0000"/>
+            <ParameterConfiguration Id="13" Value="FF"/>
+            <ParameterConfiguration Id="14" Value="0000"/>
+            <ParameterConfiguration Id="15" Value="01"/>
+            <ParameterConfiguration Id="16" Value="0000001E"/>
+            <ParameterConfiguration Id="17" Value="01"/>
+            <ParameterConfiguration Id="18" Value="FF"/>
+            <ParameterConfiguration Id="19" Value="0000"/>
+            <ParameterConfiguration Id="20" Value="FF"/>
+            <ParameterConfiguration Id="21" Value="0000"/>
+            <ParameterConfiguration Id="22" Value="01"/>
+            <ParameterConfiguration Id="23" Value="0000001E"/>
+            <ParameterConfiguration Id="24" Value="02"/>
+            <ParameterConfiguration Id="25" Value="FF"/>
+            <ParameterConfiguration Id="26" Value="0000"/>
+            <ParameterConfiguration Id="27" Value="FF"/>
+            <ParameterConfiguration Id="28" Value="0000"/>
+        </ParameterConfigurations>
+    </Configuration>
+</KonnektingDevice>
